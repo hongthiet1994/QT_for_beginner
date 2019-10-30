@@ -12,18 +12,23 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_SecDialog
 {
 public:
+    QLabel *label;
 
     void setupUi(QDialog *SecDialog)
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName(QString::fromUtf8("SecDialog"));
         SecDialog->resize(400, 300);
+        label = new QLabel(SecDialog);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(110, 100, 151, 71));
 
         retranslateUi(SecDialog);
 
@@ -33,6 +38,7 @@ public:
     void retranslateUi(QDialog *SecDialog)
     {
         SecDialog->setWindowTitle(QApplication::translate("SecDialog", "Dialog", nullptr));
+        label->setText(QApplication::translate("SecDialog", "Hello From Second Dialog", nullptr));
     } // retranslateUi
 
 };

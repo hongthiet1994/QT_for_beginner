@@ -14,14 +14,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_Login_clicked()
 {
-//    SecDialog secDeialog;
-//    secDeialog.setModal(true);
-//    secDeialog.exec();
-    hide();
-    secDialog = new SecDialog(this);
-    secDialog->show();
-
+   QString username = ui->lineEdit_username ->text();
+   QString password = ui->lineEdit_password ->text();
+   if(username == "test" && password == "test")
+   {
+       QMessageBox::information(this,"Login","username and password is correct");
+       //hide();
+       secDialog = new SecDialog(this);
+       secDialog->show();
+   }
+   else
+   {
+       QMessageBox::warning(this,"Login","username and password is not correct");
+   }
 }
