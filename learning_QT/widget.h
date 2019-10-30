@@ -15,6 +15,9 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+private slots:
+    void on_bt_Helloworld_clicked();
+
 private:
     Ui::Widget *ui;
 };
