@@ -30,7 +30,7 @@ public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QPushButton *pushButton_Login;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -38,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEdit_password;
+    QLabel *label_pic;
     QStatusBar *statusbar;
     QMenuBar *menubar;
 
@@ -54,20 +55,20 @@ public:
         pushButton_Login = new QPushButton(groupBox);
         pushButton_Login->setObjectName(QString::fromUtf8("pushButton_Login"));
         pushButton_Login->setGeometry(QRect(90, 140, 75, 23));
-        widget = new QWidget(groupBox);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 40, 231, 91));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 40, 231, 91));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         horizontalLayout->addWidget(label);
 
-        lineEdit_username = new QLineEdit(widget);
+        lineEdit_username = new QLineEdit(layoutWidget);
         lineEdit_username->setObjectName(QString::fromUtf8("lineEdit_username"));
 
         horizontalLayout->addWidget(lineEdit_username);
@@ -77,12 +78,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        lineEdit_password = new QLineEdit(widget);
+        lineEdit_password = new QLineEdit(layoutWidget);
         lineEdit_password->setObjectName(QString::fromUtf8("lineEdit_password"));
 
         horizontalLayout_2->addWidget(lineEdit_password);
@@ -90,6 +91,9 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        label_pic = new QLabel(centralwidget);
+        label_pic->setObjectName(QString::fromUtf8("label_pic"));
+        label_pic->setGeometry(QRect(100, 80, 161, 251));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -111,6 +115,7 @@ public:
         pushButton_Login->setText(QApplication::translate("MainWindow", "Login", nullptr));
         label->setText(QApplication::translate("MainWindow", "UserName", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Password", nullptr));
+        label_pic->setText(QString());
     } // retranslateUi
 
 };
