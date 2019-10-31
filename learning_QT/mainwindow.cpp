@@ -8,7 +8,7 @@
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("D:/9.QT/1.Source_code/2.Learning/learning_QT/pic.png");
+    QPixmap pix(":/resources/img/pic.png");
     ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
     ui->statusbar->addPermanentWidget(ui->label_3);
     ui->statusbar->addPermanentWidget(ui->progressBar);
