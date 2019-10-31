@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -42,6 +43,8 @@ public:
     QLabel *label_pic;
     QLabel *label_3;
     QProgressBar *progressBar;
+    QCheckBox *checkBox;
+    QPushButton *pushButton;
     QStatusBar *statusbar;
     QMenuBar *menubar;
 
@@ -60,7 +63,7 @@ public:
         pushButton_Login->setGeometry(QRect(90, 140, 75, 23));
         layoutWidget = new QWidget(groupBox);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 40, 231, 91));
+        layoutWidget->setGeometry(QRect(20, 40, 192, 52));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -96,7 +99,7 @@ public:
 
         label_pic = new QLabel(centralwidget);
         label_pic->setObjectName(QString::fromUtf8("label_pic"));
-        label_pic->setGeometry(QRect(100, 80, 161, 251));
+        label_pic->setGeometry(QRect(10, 60, 161, 251));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(600, 320, 47, 13));
@@ -104,6 +107,12 @@ public:
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         progressBar->setGeometry(QRect(420, 310, 118, 23));
         progressBar->setValue(24);
+        checkBox = new QCheckBox(centralwidget);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(280, 70, 70, 17));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(270, 110, 75, 23));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -127,6 +136,8 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "Password", nullptr));
         label_pic->setText(QString());
         label_3->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
+        checkBox->setText(QApplication::translate("MainWindow", "CheckBox", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
     ui->statusbar->addPermanentWidget(ui->label_3);
     ui->statusbar->addPermanentWidget(ui->progressBar);
+
 }
 
 MainWindow::~MainWindow()
@@ -30,10 +31,36 @@ void MainWindow::on_pushButton_Login_clicked()
        //secDialog = new SecDialog(this);
        //secDialog->show();
        ui->statusbar->showMessage("User name and password is correct",5000);
+
    }
    else
    {
        //QMessageBox::warning(this,"Login","username and password is not correct");
        ui->statusbar->showMessage("User name and password is not correct",5000);
    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+   if(ui->checkBox->isChecked())
+   {
+       QMessageBox::information(this,"title","yes user like apples");
+   }
+   else
+   {
+      QMessageBox::information(this,"title","yes user do not like apples");
+   }
+}
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    if(ui->checkBox->isChecked())
+    {
+        QMessageBox::information(this,"title","yes user like apples");
+    }
+    else
+    {
+       QMessageBox::information(this,"title","yes user do not like apples");
+    }
+
 }
