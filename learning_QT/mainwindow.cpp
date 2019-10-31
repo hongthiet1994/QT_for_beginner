@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
     QPixmap pix("D:/9.QT/1.Source_code/2.Learning/learning_QT/pic.png");
     ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
+    ui->statusbar->addPermanentWidget(ui->label_3);
+    ui->statusbar->addPermanentWidget(ui->progressBar);
 }
 
 MainWindow::~MainWindow()
@@ -23,13 +25,15 @@ void MainWindow::on_pushButton_Login_clicked()
    QString password = ui->lineEdit_password ->text();
    if(username == "test" && password == "test")
    {
-       QMessageBox::information(this,"Login","username and password is correct");
+       //QMessageBox::information(this,"Login","username and password is correct");
        //hide();
-       secDialog = new SecDialog(this);
-       secDialog->show();
+       //secDialog = new SecDialog(this);
+       //secDialog->show();
+       ui->statusbar->showMessage("User name and password is correct",5000);
    }
    else
    {
-       QMessageBox::warning(this,"Login","username and password is not correct");
+       //QMessageBox::warning(this,"Login","username and password is not correct");
+       ui->statusbar->showMessage("User name and password is not correct",5000);
    }
 }
