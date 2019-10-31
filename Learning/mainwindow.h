@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "secdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,16 +16,13 @@ public:
     ~MainWindow();
 
 private slots:
-    //void on_pushButton_clicked();
+    void on_actionNew_triggered();
 
-    void on_pushButton_Login_clicked();
+    void on_actionOpen_triggered();
 
-    void on_pushButton_clicked();
-
-    void on_checkBox_stateChanged(int arg1);
+    void on_actionExit_triggered();
 
 private:
     Ui::MainWindow *ui;
-    SecDialog *secDialog;
 };
 #endif // MAINWINDOW_H
